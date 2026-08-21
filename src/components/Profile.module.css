@@ -30,7 +30,7 @@
 
     /*Animation here*/
     overflow: hidden;
-    animation: typing 1.5s steps(40, end) forwards;
+    animation: var(--typing-animation);
 }
 
 .undername {
@@ -46,7 +46,7 @@
 
     /*Animation here*/
     overflow: hidden;
-    animation: typing 1.5s steps(40, end) forwards;
+    animation: var(--typing-animation);
 }
 
 .description {

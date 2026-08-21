@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const TyperWriter = ({ text, speed=40, delay=300 }) => {
+const TyperWriter = ({ text, speed=25, delay=300 }) => {
     const [displayedText, setDisplayedText] = useState('')
     const [isStarted, setIsStarted] = useState(false)
 

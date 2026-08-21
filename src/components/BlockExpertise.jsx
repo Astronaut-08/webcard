@@ -9,8 +9,7 @@ const BlockExpertise = ({ title, description }) => {
             </h4>
             <p className={style.description}>
                 <TyperWriter
-                text={' ' + description}
-                speed={15} />
+                text={' ' + description} />
             </p>
         </div>
     )

@@ -13,8 +13,7 @@ const Profile = () => {
             <h3 className={style.undername}>AI / ML & database specialist</h3>
             <p className={style.description}>
                 <TyperWriter
-                text=' I design data systems and machine-learning workflows that turn complex information into reliable decisions.'
-                speed={15} />
+                text=' I design data systems and machine-learning workflows that turn complex information into reliable decisions.' />
             </p>
             <Button />
         </div>

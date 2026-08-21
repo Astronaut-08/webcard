@@ -31,7 +31,6 @@
     height: auto;
     white-space: nowrap;
     font-weight: 600;
-    font-style: normal;
     font-family: var(--text-ibm);
     color: #9dbbff;
     font-size: 11px;
@@ -41,5 +40,5 @@
 
     /*Animation here*/
     overflow: hidden;
-    animation: typing 1.5s steps(40, end) forwards;
+    animation: var(--typing-animation);
 }

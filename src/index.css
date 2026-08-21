@@ -4,11 +4,12 @@
     --text-color-title: #F4F7FF;
     --text-color-description: #8E9BB0;
     --text-ibm: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    --typing-animation: typing 2s steps(40, end) forwards;
 
     background: var(--bg);
 }
 
-h1, h2, h3, h4, p, button {
+h1, h2, h3, h4, p, button, div {
     margin: 0;
     white-space: nowrap;
     word-wrap: break-word;
@@ -19,11 +20,13 @@ h1, h2, h3, h4, p, button {
 /* =================================================== ALL ANIMATION FROM WEBCARD HERE ==================================================*/
 @keyframes pulse {
     0%, 100% {
-        opacity: 1.5;
-        transform: scale(1.5);
+        opacity: 0.45;
+        transform: scale(1.65);
+        rotate: 360;
+        
     } 50% {
-        opacity: 0.85;
-        transform: scale(0.85);
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
