@@ -1,4 +1,5 @@
 import style from './BlockExpertise.module.css'
+import TyperWriter from './TyperWriter.jsx'
 
 const BlockExpertise = ({ title, description }) => {
     return(
@@ -7,7 +8,9 @@ const BlockExpertise = ({ title, description }) => {
                 {title}
             </h4>
             <p className={style.description}>
-                {description}
+                <TyperWriter
+                text={' ' + description}
+                speed={15} />
             </p>
         </div>
     )

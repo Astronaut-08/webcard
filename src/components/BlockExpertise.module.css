@@ -1,3 +1,5 @@
+@import '../index.css';
+
 .block {
     box-sizing: border-box;
     display: flex;
@@ -17,31 +19,33 @@
 .title {
     width: 100%;
     height: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-word;
     font-weight: 600;
-    font-style: normal;
-    font-family: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    font-family: var(--text-ibm);
     color: #f2f6ff;
     font-size: 15px;
     letter-spacing: 0em;
     line-height: 1.2;
     font-feature-settings: normal;
+
+    /*Animation here*/
+    overflow: hidden;
+    animation: typing 1.5s steps(40, end) forwards;
 }
 
 .description {
     width: 100%;
     height: auto;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-word;
     font-weight: 400;
-    font-style: normal;
-    font-family: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    font-family: var(--text-ibm);
     color: #8e9bb0;
     font-size: 12px;
     letter-spacing: 0em;
     line-height: 1.45;
     font-feature-settings: normal;
+}
+
+.block :hover :focus {
+    opacity: 1.5;
+    transform: scale(1.5);
 }

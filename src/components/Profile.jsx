@@ -2,6 +2,7 @@ import style from './Profile.module.css'
 import Availability from './Availability.jsx'
 import Image from './Image.jsx';
 import Button from './Button.jsx';
+import TyperWriter from './TyperWriter.jsx';
 
 const Profile = () => {
     return(
@@ -11,7 +12,9 @@ const Profile = () => {
             <h1 className={style.name}>Volodymyr Yusyp</h1>
             <h3 className={style.undername}>AI / ML & database specialist</h3>
             <p className={style.description}>
-                I design data systems and machine-learning workflows that turn complex information into reliable decisions.
+                <TyperWriter
+                text=' I design data systems and machine-learning workflows that turn complex information into reliable decisions.'
+                speed={15} />
             </p>
             <Button />
         </div>

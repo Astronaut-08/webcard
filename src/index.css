@@ -3,6 +3,44 @@
     --app-bg: #10141C;
     --text-color-title: #F4F7FF;
     --text-color-description: #8E9BB0;
+    --text-ibm: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
 
     background: var(--bg);
+}
+
+h1, h2, h3, h4, p, button {
+    margin: 0;
+    white-space: nowrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-style: normal;
+}
+
+/* =================================================== ALL ANIMATION FROM WEBCARD HERE ==================================================*/
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1.5;
+        transform: scale(1.5);
+    } 50% {
+        opacity: 0.85;
+        transform: scale(0.85);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    } to {
+        width: 100%;
+    }
 }

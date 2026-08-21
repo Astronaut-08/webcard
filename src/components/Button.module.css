@@ -16,7 +16,7 @@
     white-space: pre;
     font-weight: 600;
     font-style: normal;
-    font-family: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    font-family: var(--text-ibm);
     color: #ffffff;
     font-size: 14px;
     letter-spacing: 0em;
