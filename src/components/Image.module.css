@@ -1,0 +1,17 @@
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b0f17;
+    overflow: var(--overflow-clip-fallback, clip);
+    padding: 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0px;
+    border-radius: 18px;
+    border: 1px solid rgba(46, 124, 255, 0.34);
+}

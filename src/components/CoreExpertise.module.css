@@ -1,0 +1,13 @@
+.main {
+    width: 100%;
+    height: min-content;
+    display: grid;
+    overflow: visible;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    justify-content: start;
+    grid-auto-rows: minmax(0, 1fr);
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    padding: 0px;
+    gap: 12px;
+    border-radius: 0px 0px 0px 0px;
+}

@@ -1,0 +1,38 @@
+.availible {
+    width: min-content;
+    height: min-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    padding: 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 9px;
+    position: absolute;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    display: block;
+    background-color: #2e7cff;
+    position: absolute;
+    border-radius: 100px;
+}
+
+.status {
+    width: auto;
+    height: auto;
+    white-space: pre;
+    font-weight: 600;
+    font-style: normal;
+    font-family: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    color: #9dbbff;
+    font-size: 11px;
+    letter-spacing: 1.25px;
+    line-height: 1.2;
+    font-feature-settings: normal;
+}

@@ -1,0 +1,64 @@
+.main {
+    box-sizing: border-box;
+    width: 42%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 36px;
+    background: linear-gradient(145deg, #172133 0%, rgb(13, 17, 26) 57.99999999999999%, rgb(10, 12, 17) 100%);
+    overflow: var(--overflow-clip-fallback, clip);
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 22px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.name {
+    width: 100%;
+    height: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Nippo", "Nippo Placeholder", sans-serif;
+    color: #f4f7ff;
+    font-size: 48px;
+    letter-spacing: -1.8px;
+    line-height: 0.98;
+    font-feature-settings: normal;
+}
+
+.undername {
+    width: 100%;
+    height: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-weight: 500;
+    font-style: normal;
+    font-family: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    color: #b7c4d8;
+    font-size: 18px;
+    letter-spacing: 0em;
+    line-height: 1.35;
+    font-feature-settings: normal;
+}
+
+.description {
+    width: 100%;
+    height: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "IBM Plex Sans", "IBM Plex Sans Placeholder", sans-serif;
+    color: #8e9bb0;
+    font-size: 15px;
+    letter-spacing: 0em;
+    line-height: 1.55;
+    font-feature-settings: normal;
+}
