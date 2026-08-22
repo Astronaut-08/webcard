@@ -1,8 +1,8 @@
 @import '../index.css';
 
 .availible {
-    width: min-content;
-    height: min-content;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -10,7 +10,6 @@
     overflow: visible;
     padding: 0px;
     align-content: center;
-    flex-wrap: nowrap;
     gap: 9px;
     border-radius: 0px 0px 0px 0px;
 }
@@ -29,7 +28,6 @@
 .status {
     width: auto;
     height: auto;
-    white-space: nowrap;
     font-weight: 600;
     font-family: var(--text-ibm);
     color: #9dbbff;
@@ -37,8 +35,10 @@
     letter-spacing: 1.25px;
     line-height: 1.2;
     font-feature-settings: normal;
+}
 
-    /*Animation here*/
-    overflow: hidden;
-    animation: var(--typing-animation);
+@media screen and (max-width: 767px) {
+  .availible {
+    justify-content: flex-start;
+  }
 }

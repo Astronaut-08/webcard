@@ -11,3 +11,15 @@
     gap: 12px;
     border-radius: 0px 0px 0px 0px;
 }
+
+@media screen and (max-width: 767px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+}

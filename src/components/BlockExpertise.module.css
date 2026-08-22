@@ -28,16 +28,11 @@
     letter-spacing: 0em;
     line-height: 1.2;
     font-feature-settings: normal;
-
-    /*Animation here*/
-    overflow: hidden;
-    animation: var(--typing-animation);
 }
 
 .description {
     width: 100%;
     height: auto;
-    white-space: pre-wrap;
     font-weight: 400;
     font-family: var(--text-ibm);
     color: #8e9bb0;
@@ -50,4 +45,16 @@
 .block:hover, .block:focus {
     transform: scale(1.1);
     background-color: #19243A;
+}
+
+@media screen and (max-width: 767px) {
+    .block {
+        width: 100%;
+        height: min-content;
+    }
+
+    .block:hover, .block:focus {
+        transform: scale(1.05);
+        background-color: #19243A;
+}
 }

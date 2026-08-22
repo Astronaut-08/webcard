@@ -9,8 +9,12 @@ const Profile = () => {
         <div className={style.main}>
             <Availability />
             <Image />
-            <h1 className={style.name}>Volodymyr Yusyp</h1>
-            <h3 className={style.undername}>AI / ML & database specialist</h3>
+            <h1 className={style.name}>
+                <TyperWriter
+                text=' Volodymyr Yusyp' /></h1>
+            <h3 className={style.undername}>
+                <TyperWriter 
+                text=' AI / ML & database specialist' /></h3>
             <p className={style.description}>
                 <TyperWriter
                 text=' I design data systems and machine-learning workflows that turn complex information into reliable decisions.' />

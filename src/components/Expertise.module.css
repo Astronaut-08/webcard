@@ -27,16 +27,11 @@
     letter-spacing: 1.2px;
     line-height: 1.2;
     font-feature-settings: normal;
-
-    /*Animation here*/
-    overflow: hidden;
-    animation: var(--typing-animation);
 }
 
 .capabilities {
     width: 100%;
     height: auto;
-    white-space: pre-wrap;
     font-weight: 700;
     font-family: "Nippo", "Nippo Placeholder", sans-serif;
     color: #f4f7ff;
@@ -44,4 +39,18 @@
     letter-spacing: -1px;
     line-height: 1.08;
     font-feature-settings: normal;
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        width: 100%;
+        padding: 24px;
+        gap: 18px;
+    }
+
+    .capabilities {
+        font-size: 27px;
+        letter-spacing: -1px;
+        line-height: 1.08;
+    }
 }

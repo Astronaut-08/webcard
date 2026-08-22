@@ -5,7 +5,8 @@ const BlockExpertise = ({ title, description }) => {
     return(
         <div className={style.block}>
             <h4 className={style.title}>
-                {title}
+                <TyperWriter 
+                text={' ' + title} />
             </h4>
             <p className={style.description}>
                 <TyperWriter
