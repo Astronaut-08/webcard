@@ -28,11 +28,7 @@ const TyperWriter = ({
             { threshold }
         )
 
-        if (triggerOnce && isMobile) {
-            observer.observe(triggerRef.current)
-        } else if (!isMobile) {
-            setIsVisible(true) // play all for desctop
-        }
+        observer.observe(triggerRef.current)
 
         return () => observer.disconnect() // clear
     }, [threshold, triggerOnce])
