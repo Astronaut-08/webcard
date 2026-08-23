@@ -12,10 +12,6 @@ const TyperWriter = ({
 
     // Delay before start
     useEffect(() => {
-        const isMobile = window.matchMedia(
-            '(max-width: 767px)'
-        ).matches
-
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -53,7 +49,15 @@ const TyperWriter = ({
         return () => clearInterval(interval)
     }, [text, speed, isVisible])
 
-    return <span ref={triggerRef}>{displayedText}</span>
+    return (
+        <span ref={triggerRef}>
+            <span>{displayedText}</span>
+            {/* Invisible but full size */}
+            <span style={{visibility: 'hidden'}}>
+                {text.substring(displayedText.length)}
+            </span>
+        </span>
+    )
 }
 
 export default TyperWriter
