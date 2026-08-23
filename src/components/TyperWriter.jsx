@@ -1,26 +1,53 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const TyperWriter = ({ text, speed=25, delay=300 }) => {
+const TyperWriter = ({
+    text, 
+    speed=25,
+    threshold=0.5,
+    triggerOnce=true
+}) => {
     const [displayedText, setDisplayedText] = useState('')
-    const [isStarted, setIsStarted] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
+    const triggerRef = useRef(null)
 
     // Delay before start
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsStarted(true)
-        }, delay)
+        const isMobile = window.matchMedia(
+            '(max-width: 767px)'
+        ).matches
 
-        return () => clearTimeout(timer)
-    }, [delay])
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true)
+                    if (triggerOnce) observer.disconnect()
+                } else if (!triggerOnce) {
+                    setIsVisible(false)
+                }
+            },
+            { threshold }
+        )
+
+        if (triggerOnce && isMobile) {
+            observer.observe(triggerRef.current)
+        } else if (!isMobile) {
+            setIsVisible(true) // play all for desctop
+        }
+
+        return () => observer.disconnect() // clear
+    }, [threshold, triggerOnce])
 
     // Logic of typing
     useEffect(() => {
-        if(!isStarted) return
+        if(!isVisible) return
+
+        setDisplayedText('')
 
         let currentIndex = 0
         const interval = setInterval(() => {
             if (currentIndex < text.length) {
-                setDisplayedText((prev) => prev + text[currentIndex])
+                const char = text[currentIndex]
+                setDisplayedText((prev) => prev + char)
                 currentIndex++
             } else {
                 clearInterval(interval)
@@ -28,9 +55,9 @@ const TyperWriter = ({ text, speed=25, delay=300 }) => {
         }, speed)
 
         return () => clearInterval(interval)
-    }, [text, speed, isStarted])
+    }, [text, speed, isVisible])
 
-    return <>{displayedText}</>
+    return <span ref={triggerRef}>{displayedText}</span>
 }
 
 export default TyperWriter

@@ -6,7 +6,7 @@
     height: min-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 36px;
     background: linear-gradient(145deg, #172133 0%, rgb(13, 17, 26) 57.99999999999999%, rgb(10, 12, 17) 100%);
@@ -58,6 +58,7 @@
     width: 100%;
     padding: 24px;
     gap: 18px;
+    justify-content: center;
   }
   
   .name {

@@ -7,7 +7,7 @@ const Availability = () => {
             <div className={style.dot}></div>
             <p className={style.status}>
                 <TyperWriter
-                text=' AVAILABLE FOR SELECT COLLABORATIONS' /></p>
+                text='AVAILABLE FOR SELECT COLLABORATIONS' /></p>
         </div>
     )
 };

@@ -6,11 +6,11 @@ const BlockExpertise = ({ title, description }) => {
         <div className={style.block}>
             <h4 className={style.title}>
                 <TyperWriter 
-                text={' ' + title} />
+                text={title} />
             </h4>
             <p className={style.description}>
                 <TyperWriter
-                text={' ' + description} />
+                text={description} />
             </p>
         </div>
     )
