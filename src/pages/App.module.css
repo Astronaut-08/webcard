@@ -4,6 +4,7 @@
   box-sizing: border-box;
   width: 100%;
   height: min-content;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

@@ -53,6 +53,17 @@
     font-feature-settings: normal;
 }
 
+.socialmedia {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+  padding-top: 16px;
+}
+
 @media screen and (max-width: 767px) {
   .main {
     width: 100%;
@@ -67,5 +78,9 @@
 
   .undername {
     font-size: 16px;
+  }
+
+  .socialmedia {
+    gap: 10px;
   }
 }
