@@ -3,21 +3,29 @@ import Availability from './Availability.jsx'
 import Image from './Image.jsx';
 import Link from './Link.jsx';
 import TyperWriter from './TyperWriter.jsx';
+import Lang from './Lang.jsx'
+import { useTranslation } from 'react-i18next';
 
 const Profile = () => {
+    const { t } = useTranslation()
+
     return(
-        <div className={style.main}>  
-            <Availability />
+        <div className={style.main}>
+            <div className={style.langwrapper}>
+                <Availability />
+                <Lang />
+            </div>
+            
             <Image />
             <h1 className={style.name}>
                 <TyperWriter
-                text='Volodymyr Yusyp' /></h1>
+                text={t('name')} /></h1>
             <h3 className={style.undername}>
                 <TyperWriter 
-                text='AI / ML & database specialist' /></h3>
+                text={t('specialisation')} /></h3>
             <p className={style.description}>
                 <TyperWriter
-                text='I design data systems and machine-learning workflows that turn complex information into reliable decisions.' />
+                text={t('descriptionOfSpecialisation')} />
             </p>
 
             <div className={style.socialmedia}>

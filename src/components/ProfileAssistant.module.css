@@ -1,0 +1,165 @@
+.container {
+    position: relative;
+    width: 100%;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--corner-radius);
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden; /* Щоб блюр не виходив за межі */
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    opacity: 0.95;
+}
+
+.intro {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.35;
+    opacity: 0.92;
+}
+
+.chatBox {
+    min-height: var(--min-conv-height);
+    max-height: 260px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--corner-radius) - 4px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.22);
+}
+
+.message {
+    max-width: 92%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.assistantMessage {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
+}
+
+.userMessage {
+    align-self: flex-end;
+    /* Аналог ${accentColor}22 (22 в hex це ~13% прозорості) */
+    background: color-mix(in srgb, var(--accent-color) 13%, transparent);
+    border: 1px solid var(--accent-color);
+}
+
+.thinking {
+    font-size: 12px;
+    opacity: 0.8;
+    padding: 2px 4px;
+}
+
+.presetContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.presetBtn {
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-color);
+    font-size: 11px;
+    padding: 6px 9px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.presetBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-color);
+}
+
+.inputContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.inputField {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: calc(var(--corner-radius) - 4px);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-color);
+    padding: 10px 11px;
+    outline: none;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+}
+
+.inputField:focus {
+    border-color: var(--accent-color);
+}
+
+.sendBtn {
+    border: 1px solid var(--accent-color);
+    border-radius: calc(var(--corner-radius) - 4px);
+    background: var(--accent-color);
+    color: #0B0F1A;
+    padding: 0 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.sendBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Блок-перекриття (Overlay) в розробці */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* Safari */
+    background-color: rgba(18, 23, 34, 0.35);
+    z-index: 10;
+}
+
+.overlayCard {
+    background: rgba(30, 36, 48, 0.9);
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    color: #E6ECFF;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    font-family: var(--text-ibm), sans-serif;
+}

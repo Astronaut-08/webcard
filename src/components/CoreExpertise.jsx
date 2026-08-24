@@ -1,21 +1,24 @@
 import style from './CoreExpertise.module.css'
 import BlockExpertise from './BlockExpertise.jsx'
+import { useTranslation } from 'react-i18next'
 
 const CoreExpertise = () => {
+    const { t } = useTranslation()
+
     return(
         <div className={style.main}>
             <BlockExpertise
-            title='Machine learning'
-            description='Production models, evaluation and applied LLM workflows.' />
+            title={t('skillML')}
+            description={t('skillMLDescr')} />
             <BlockExpertise
-            title='Data platforms'
-            description='Warehouses, vector search and accountable data pipelines.' />
+            title={t('skillDataPlatform')}
+            description={t('skillDataPlatformDescr')} />
             <BlockExpertise
-            title='System architecture'
-            description='Reliable interfaces, scalable APIs and clear engineering decisions.' />
+            title={t('skillSysArch')}
+            description={t('skillSysArchDescr')} />
             <BlockExpertise
-            title='Data governance'
-            description='Quality, lineage and trustworthy delivery for critical decisions.' />
+            title={t('skillDataGover')}
+            description={t('skillDataGoverDescr')} />
         </div>
     )
 }

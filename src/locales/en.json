@@ -1,0 +1,23 @@
+{
+    "availible": "AVAILABLE FOR SELECT COLLABORATIONS",
+    "name": "Volodymyr Yusyp",
+    "specialisation": "AI / ML & Data Engineer",
+    "descriptionOfSpecialisation": "I design data systems and machine-learning workflows that turn complex information into reliable decisions.",
+    
+    "partOfSkills01": "01 / SYSTEMS INTELLIGENCE",
+    "titleOfSkills": "From data architecture to deployed intelligence.",
+
+    "skillML": "Machine learning",
+    "skillMLDescr": "Production models, evaluation and applied LLM workflows.",
+
+    "skillDataPlatform": "Data platforms",
+    "skillDataPlatformDescr": "Warehouses, vector search and accountable data pipelines.",
+
+    "skillSysArch": "System architecture",
+    "skillSysArchDescr": "Reliable interfaces, scalable APIs and clear engineering decisions.",
+
+    "skillDataGover": "Data governance",
+    "skillDataGoverDescr": "Quality, lineage and trustworthy delivery for critical decisions.",
+
+    "partOfWebInProgress": "Currently in development 🚧"
+}

@@ -1,0 +1,102 @@
+.mainbox {
+    position: relative;
+    display: inline-block;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.03); /* Напівпрозорий фон, як у карток на скріншоті */
+    border: 1px solid rgba(157, 187, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* Типографіка з Availability.module.css */
+    font-weight: 600;
+    font-family: var(--text-ibm);
+    color: #9dbbff;
+    font-size: 11px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(157, 187, 255, 0.3);
+    color: #ffffff;
+}
+
+.code {
+    line-height: 1.2;
+}
+
+.chevr {
+    font-size: 8px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.chevr.open {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    padding: 6px 0;
+    background-color: #0b111e; /* Темний колір фону додатку */
+    border: 1px solid rgba(157, 187, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    list-style: none;
+    min-width: fit-content;
+    z-index: 50;
+    
+    /* Анімація появи */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.2s ease;
+}
+
+.dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    
+    /* Типографіка */
+    font-family: var(--text-ibm);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #9dbbff;
+    text-transform: uppercase;
+}
+
+.option:hover {
+    background-color: rgba(157, 187, 255, 0.05);
+    color: #ffffff;
+}
+
+.option.selected {
+    color: #ffffff;
+    background-color: rgba(46, 124, 255, 0.15); /* Використано колір #2e7cff з пульсуючої крапки */
+}

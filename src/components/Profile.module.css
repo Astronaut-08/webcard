@@ -64,6 +64,13 @@
   padding-top: 16px;
 }
 
+.langwrapper {
+  display: flex;
+  justify-content: space-between; /* Розводить елементи по краях */
+  align-items: center;
+  width: 100%;
+}
+
 @media screen and (max-width: 767px) {
   .main {
     width: 100%;
