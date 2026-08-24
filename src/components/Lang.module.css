@@ -1,6 +1,9 @@
 .mainbox {
     position: relative;
     display: inline-block;
+
+    /* Animation */
+    animation: slideFromLeft 0.8s ease-out 0.2s forwards;
 }
 
 .btn {
@@ -13,6 +16,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
+    white-space: nowrap;
     
     /* Типографіка з Availability.module.css */
     font-weight: 600;
