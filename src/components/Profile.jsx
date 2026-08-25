@@ -37,7 +37,7 @@ const Profile = () => {
                 href='https://www.instagram.com/volodymyr_yusyp/' />
                 <Link 
                 image='/icons.svg#linked-in'
-                href='www.linkedin.com/in/volodymyryusyp' />
+                href='https://www.linkedin.com/in/volodymyryusyp/' />
                 <Link 
                 image='/icons.svg#github'
                 href='https://github.com/Astronaut-08' />

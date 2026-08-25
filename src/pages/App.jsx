@@ -1,6 +1,7 @@
 import style from './App.module.css'
 import Profile from '../components/Profile.jsx'
 import Expertise from '../components/Expertise.jsx'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
       <section className={style.mainsection}>
         <Profile />
         <Expertise />
+        <SpeedInsights />
       </section>
   )
 }
