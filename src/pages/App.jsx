@@ -2,6 +2,7 @@ import style from './App.module.css'
 import Profile from '../components/Profile.jsx'
 import Expertise from '../components/Expertise.jsx'
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
         <Profile />
         <Expertise />
         <SpeedInsights />
+        <Analytics />
       </section>
   )
 }
