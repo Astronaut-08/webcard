@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://volodymyr-yusyp.pp.ua/sitemap.xml
