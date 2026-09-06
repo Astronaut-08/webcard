@@ -17,6 +17,11 @@ h1, h2, h3, h4, p, button, div {
     font-style: normal;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+}
+
 /* =================================================== ALL ANIMATION FROM WEBCARD HERE ==================================================*/
 @keyframes pulse {
     0%, 100% {
