@@ -136,7 +136,7 @@
 }
 
 /* Блок-перекриття (Overlay) в розробці */
-.overlay {
+/* .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -147,7 +147,7 @@
     align-items: center;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px); /* Safari */
-    background-color: rgba(18, 23, 34, 0.35);
+    /* background-color: rgba(18, 23, 34, 0.35);
     z-index: 10;
 }
 
@@ -162,4 +162,4 @@
     letter-spacing: 0.5px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     font-family: var(--text-ibm), sans-serif;
-}
+} */

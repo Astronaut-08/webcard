@@ -9,6 +9,7 @@ import {
 import style from './ProfileAssistant.module.css';
 import { useTranslation } from "react-i18next";
 
+
 export default function ProfileAIAssistant({
     accentColor = "#3B82F6",
     surfaceColor = "#121722",
@@ -17,14 +18,12 @@ export default function ProfileAIAssistant({
     cornerRadius = 14,
     introText = "Ask concise questions about ML focus, architecture, tooling, governance, and project fit.",
     starterPrompt = "Hi — I can answer profile questions about ML systems, data platforms, architecture, governance, tooling, and engagement fit.",
-    fallbackResponse = "I can best help with machine learning systems, data platforms, architecture, governance, tooling, and modernization engagements.",
     minConversationHeight = 140,
     presetQuestions = [
         "What is your ML focus?",
         "What tools do you use?",
         "What projects are the best fit?",
     ],
-    isUnderConstruction = true,
 }) {
     const [inputValue, setInputValue] = useState("");
     const { t } = useTranslation();
@@ -37,86 +36,52 @@ export default function ProfileAIAssistant({
                 "Ask me about AI/ML focus, tooling, architecture, or engagement fit.",
         },
     ]);
-    const timeoutRef = useRef(null);
-
-    const qaPairs = useMemo(
-        () => [
-            {
-                keywords: ["machine learning", "ml", "models", "ai"],
-                answer: "Focus: practical ML systems, from experimentation to production, with measurable business impact.",
-            },
-            {
-                keywords: ["data platform", "platform", "pipelines", "analytics engineering"],
-                answer: "Builds reliable data platforms: ingestion, transformation, quality checks, and analytics-ready layers.",
-            },
-            {
-                keywords: ["architecture", "system design", "scalability", "reliability"],
-                answer: "Designs scalable system architecture balancing performance, maintainability, and operational resilience.",
-            },
-            {
-                keywords: ["governance", "compliance", "quality", "lineage"],
-                answer: "Applies data governance with clear ownership, lineage, controls, and quality standards across teams.",
-            },
-            {
-                keywords: ["python", "sql", "postgresql", "vector", "vector search", "cloud", "tooling"],
-                answer: "Tooling includes Python, SQL, PostgreSQL, vector search patterns, and cloud analytics ecosystems.",
-            },
-            {
-                keywords: ["engagement", "fit", "project", "help", "work together"],
-                answer: "Best fit: new data products, AI adoption programs, and analytical modernization initiatives.",
-            },
-        ],
-        []
-    );
-
-    const findAnswer = useCallback(
-        (question) => {
-            const normalized = question.toLowerCase().trim();
-            const match = qaPairs.find((entry) =>
-                entry.keywords.some((keyword) => normalized.includes(keyword))
-            );
-            return match?.answer || fallbackResponse;
-        },
-        [qaPairs, fallbackResponse]
-    );
+    const abortRef = useRef(null);
 
     const sendMessage = useCallback(
-        (rawQuestion) => {
-            const question = (rawQuestion ?? inputValue).trim();
+        async (rawQuestion) => {
+            const question = (
+                typeof rawQuestion === 'string' ? rawQuestion : inputValue
+            ).trim();
             if (!question || isLoading) return;
 
-            startTransition(() => {
-                setMessages((prev) => [...prev, { role: "user", text: question }]);
-                setInputValue("");
-                setIsLoading(true);
-            });
+            setMessages((prev) => [...prev, { role: "user", text: question }]);
+            setInputValue("");
+            setIsLoading(true);
 
-            if (typeof window !== "undefined") {
-                if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-                timeoutRef.current = window.setTimeout(() => {
-                    const answer = findAnswer(question);
-                    startTransition(() => {
-                        setMessages((prev) => [...prev, { role: "assistant", text: answer }]);
-                        setIsLoading(false);
-                    });
-                }, 420);
-            } else {
-                const answer = findAnswer(question);
-                startTransition(() => {
-                    setMessages((prev) => [...prev, { role: "assistant", text: answer }]);
-                    setIsLoading(false);
-                });
+            abortRef.current?.abort()
+            const contoller = new AbortController()
+            abortRef.current = contoller
+
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify({ prompt: question }),
+                    signal: contoller.signal
+                })
+
+                if (!res.ok) throw new Error(`HTTP ${res.status}`)
+
+                const data = await res.json()
+                setMessages((prev) => [
+                    ...prev,
+                    { role: "assistant", text: data.result}
+                ])
+            } catch(err) {
+                if (err.name === 'AbortError') return;
+                setMessages((prev) => [
+                    ...prev,
+                    { role: 'assistant', text: 'Не вдалось отримати відповідь, спробуйте ще раз.' }
+                ])
+            } finally {
+                if (abortRef.current === contoller) setIsLoading(false)
             }
-        },
-        [findAnswer, inputValue, isLoading]
+        }, [inputValue, isLoading]
     );
 
     useEffect(() => {
-        return () => {
-            if (typeof window !== "undefined" && timeoutRef.current) {
-                window.clearTimeout(timeoutRef.current);
-            }
-        };
+        return () => abortRef.current?.abort()
     }, []);
 
     const onKeyDown = useCallback(
@@ -201,13 +166,13 @@ export default function ProfileAIAssistant({
                 </button>
             </div>
 
-            {isUnderConstruction && (
+            {/* {isUnderConstruction && (
                 <div className={style.overlay}>
                     <div className={style.overlayCard}>
                         {t('partOfWebInProgress')}
                     </div>
                 </div>
-            )}
+            )} */}
         </section>
     );
 }
