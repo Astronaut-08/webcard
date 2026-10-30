@@ -16,14 +16,8 @@ export default function ProfileAIAssistant({
     textColor = "#E6ECFF",
     borderColor = "#2A3242",
     cornerRadius = 14,
-    introText = "Ask concise questions about ML focus, architecture, tooling, governance, and project fit.",
-    starterPrompt = "Hi — I can answer profile questions about ML systems, data platforms, architecture, governance, tooling, and engagement fit.",
     minConversationHeight = 140,
-    presetQuestions = [
-        "What is your ML focus?",
-        "What tools do you use?",
-        "What projects are the best fit?",
-    ],
+    isUnderConstruction = false
 }) {
     const [inputValue, setInputValue] = useState("");
     const { t } = useTranslation();
@@ -31,9 +25,7 @@ export default function ProfileAIAssistant({
     const [messages, setMessages] = useState([
         {
             role: "assistant",
-            text:
-                starterPrompt ||
-                "Ask me about AI/ML focus, tooling, architecture, or engagement fit.",
+            text: t('starterPrompt')   
         },
     ]);
     const abortRef = useRef(null);
@@ -73,7 +65,7 @@ export default function ProfileAIAssistant({
                     const { done, value } = await reader.read()
                     if (done) break
                     const chunk = decoder.decode(value, {stream: true})
-                    sendMessage((prev) => {
+                    setMessages((prev) => {
                         const next = [...prev]
                         const last = next[next.length - 1]
                         next[next.length - 1] = { ...last, text: last.text + chunk}
@@ -116,11 +108,17 @@ export default function ProfileAIAssistant({
         '--min-conv-height': `${minConversationHeight}px`
     };
 
+    const presetQuestions = [
+        t('presetQuestions1'),
+        t('presetQuestions2'),
+        t('presetQuestions3')
+    ]
+
     return (
         <section className={style.container} style={cssVariables}>
             <div className={style.header}>
-                <div className={style.title}>Profile AI Assistant</div>
-                <p className={style.intro}>{introText}</p>
+                <div className={style.title}>{t('headAIAssistant')}</div>
+                <p className={style.intro}>{t('introText')}</p>
             </div>
 
             <div className={style.chatBox}>
@@ -164,7 +162,7 @@ export default function ProfileAIAssistant({
                         startTransition(() => setInputValue(nextValue));
                     }}
                     onKeyDown={onKeyDown}
-                    placeholder="Ask a profile question..."
+                    placeholder={t('chatPlaceholder')}
                     className={style.inputField}
                 />
                 <button
@@ -174,17 +172,17 @@ export default function ProfileAIAssistant({
                     disabled={isLoading || inputValue.trim().length === 0}
                     className={style.sendBtn}
                 >
-                    Send
+                    {t('sendBtn')}
                 </button>
             </div>
 
-            {/* {isUnderConstruction && (
+            {isUnderConstruction && (
                 <div className={style.overlay}>
                     <div className={style.overlayCard}>
                         {t('partOfWebInProgress')}
                     </div>
                 </div>
-            )} */}
+            )}
         </section>
     );
 }

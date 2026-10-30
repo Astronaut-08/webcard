@@ -19,5 +19,14 @@
     "skillDataGover": "Data governance",
     "skillDataGoverDescr": "Quality, lineage and trustworthy delivery for critical decisions.",
 
-    "partOfWebInProgress": "Currently in development 🚧"
+    "partOfWebInProgress": "Currently in development 🚧",
+
+    "starterPrompt": "Hi! I can provide guidance on developer skills, explain the terms of collaboration, and so on.",
+    "introText": "Feel free to ask any questions you might have!",
+    "presetQuestions1": "What is your ML focus?",
+    "presetQuestions2": "What tools do you use?",
+    "presetQuestions3": "What projects are the best fit?",
+    "headAIAssistant": "Profile AI Assistant",
+    "chatPlaceholder": "Ask a profile question...",
+    "sendBtn": "Send"
 }
