@@ -1,74 +1,73 @@
 import OpenAI from "openai";
 
 
-export default async function handler(req) {
-    // Обробляємо CORS для локальної розробки
-    if (req.method === 'OPTIONS') {
-        return new Response('OK', {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            }
-        })
-    }
 
+const SYSTEM_PROMPT = `You are an assistant on a developer's portfolio site. Answer concisely about ML focus, architecture, tooling, governance and project fit. If you don't know something about the profile, say so.`
+
+// const json = (body, status = 200) => {
+//     new Response(JSON.stringify(body), {
+//         status,
+//         headers: {
+//             "Content-Type": "application/json"
+//         }
+//     })
+// }
+
+export default async function handler(req, res) {
     // Дозволяємо лиже POST
     if (req.method !== 'POST') {
-        return new Response(JSON.stringify({error: 'Method not allowed'}), {
-            status: 405,
-            headers: {'Content-type': 'application/json'}
-        })
+        return res.status(400).json({error: 'Method not allowed'})
+    }
+
+    const prompt = req.body?.prompt
+
+    if (typeof prompt !== 'string' || prompt.trim() || prompt.length > 500) {
+        return res.status(400).json({error: 'Invalid prompt'})
+    }
+
+    if (!process.env.OPENAI_API_KEY) {
+        return res.status(500).json({error: "API KEY is not set"})
     }
 
     try {
-        // Зчитуємо тіло запиту
-        const body = await req.json()
-        const { prompt } = body
-
-        if (!prompt) {
-            return new Response(JSON.stringify({ error: 'Prompt is required' }), {
-                status: 400,
-                headers: { 'Content-type': 'application/json' }
-            })
-        }
-
-        const apiKey = process.env.OPENAI_API_KEY
-
         // Підключаємо свій акаунт OpenAI або OpenRouter
         const openai = new OpenAI({
-            apiKey: apiKey,
+            apiKey: process.env.OPENAI_API_KEY,
             baseURL: 'https://openrouter.ai/api/v1',
             timeout: 15000, 
+            maxRetries: 0,
             defaultHeaders: {
                 'HTTP-Referer': 'https://volodymyr-yusyp.pp.ua',
                 'X-Title': 'WebCard Portfolio',
             }
         })
 
-        console.log('Відправляємо запит до OpenRouter...')
-
-        const response = await openai.chat.completions.create({
+        // Вмикаємо Stream 
+        const stream = await openai.chat.completions.create({
             model: 'openai/gpt-4o-mini', // Економна і швидка модель
-            messages: [{ role: 'user', content: prompt }]
+            messages: [
+                { role: 'system', content: SYSTEM_PROMPT },
+                { role: 'user', content: prompt }
+            ],
+            max_tokens: 400,
+            stream: true
         })
 
-        const aiMessage = response.choices[0].message.content || ''
+        res.setHeader("Content-Type", "text/plain; charset=utf-8")
+        res.setHeader("Cache-Control", "no-cache")
 
-        return new Response(JSON.stringify({ result: aiMessage }), {
-            status: 200,
-            headers: {
-                'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        })
+        for await (const chunk of stream) {
+            const text = chunk.choices[0]?.delta?.content || ''
+            if (text) res.write(text)
+        }
+        res.end()
+
     } catch (error) {
-        return new Response(JSON.stringify({error: error.message}), {
-            status: 500,
-            headers: {
-                'Content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
-        })
+        console.error("/api/chat failed:", error);
+        if (!res.headersSent) {
+            res.status(500).json({ error: error.message });
+        } else {
+            res.end();
+        }
     }
 }

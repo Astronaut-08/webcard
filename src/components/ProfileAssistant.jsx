@@ -45,7 +45,7 @@ export default function ProfileAIAssistant({
             ).trim();
             if (!question || isLoading) return;
 
-            setMessages((prev) => [...prev, { role: "user", text: question }]);
+            setMessages((prev) => [...prev, { role: "user", text: question }, { role: "assistant", text: "" }]);
             setInputValue("");
             setIsLoading(true);
 
@@ -56,23 +56,35 @@ export default function ProfileAIAssistant({
             try {
                 const res = await fetch('/api/chat', {
                     method: 'POST',
-                    headers: { 'Content-type': 'application/json' },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ prompt: question }),
                     signal: contoller.signal
                 })
 
-                if (!res.ok) throw new Error(`HTTP ${res.status}`)
+                if (!res.ok || !res.body) {
+                    const err = await res.json().catch(() => ({}))
+                    throw new Error(err.error || `HTTP ${res.status}`)
+                }
 
-                const data = await res.json()
-                setMessages((prev) => [
-                    ...prev,
-                    { role: "assistant", text: data.result}
-                ])
+                const reader = res.body.getReader()
+                const decoder = new TextDecoder()
+
+                while (true) {
+                    const { done, value } = await reader.read()
+                    if (done) break
+                    const chunk = decoder.decode(value, {stream: true})
+                    sendMessage((prev) => {
+                        const next = [...prev]
+                        const last = next[next.length - 1]
+                        next[next.length - 1] = { ...last, text: last.text + chunk}
+                        return next
+                    })
+                }
             } catch(err) {
                 if (err.name === 'AbortError') return;
                 setMessages((prev) => [
                     ...prev,
-                    { role: 'assistant', text: 'Не вдалось отримати відповідь, спробуйте ще раз.' }
+                    { role: 'assistant', text: 'Can\'t get response, please try again.' }
                 ])
             } finally {
                 if (abortRef.current === contoller) setIsLoading(false)
@@ -123,7 +135,7 @@ export default function ProfileAIAssistant({
                         </div>
                     );
                 })}
-                {isLoading && (
+                {isLoading && messages[messages.length - 1]?.text === '' && (
                     <div aria-live="polite" className={style.thinking}>
                         Thinking…
                     </div>
