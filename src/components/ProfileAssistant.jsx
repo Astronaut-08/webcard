@@ -1,10 +1,8 @@
 import {
     useCallback,
-    useMemo,
     useRef,
     useState,
     useEffect,
-    startTransition,
 } from "react";
 import style from './ProfileAssistant.module.css';
 import { useTranslation } from "react-i18next";
@@ -157,10 +155,7 @@ export default function ProfileAIAssistant({
                 <input
                     aria-label="Ask about the specialist profile"
                     value={inputValue}
-                    onChange={(event) => {
-                        const nextValue = event.target.value;
-                        startTransition(() => setInputValue(nextValue));
-                    }}
+                    onChange={(event) => setInputValue(event.target.value)}
                     onKeyDown={onKeyDown}
                     placeholder={t('chatPlaceholder')}
                     className={style.inputField}
