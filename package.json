@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pinecone-database/pinecone": "^9.1.0",
     "@splinetool/react-spline": "^4.1.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
