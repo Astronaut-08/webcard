@@ -6,6 +6,8 @@ import {
 } from "react";
 import style from './ProfileAssistant.module.css';
 import { useTranslation } from "react-i18next";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from "remark-gfm";
 
 
 export default function ProfileAIAssistant({
@@ -127,7 +129,15 @@ export default function ProfileAIAssistant({
                             key={`${message.role}-${index}`}
                             className={`${style.message} ${isAssistant ? style.assistantMessage : style.userMessage}`}
                         >
-                            {message.text}
+                            {isAssistant ? (<ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                    a: (props) => (
+                                        <a {...props} target="_blank" rel="noopener noreferrer"></a>
+                                    )
+                                }}>
+                                {message.text}
+                            </ReactMarkdown>) : message.text}
                         </div>
                     );
                 })}
