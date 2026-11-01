@@ -1,32 +1,26 @@
 {
-    "availible": "ВІЛЬНИЙ ДЛЯ НОВИХ ПРОЕКТІВ",
     "name": "Володимир Юсип",
-    "specialisation": "Інженер з AI / ML та систем даних",
-    "descriptionOfSpecialisation": "Проєктую системи роботи з даними та процеси машинного навчання, перетворюючи складні дані на надійні рішення.",
+    "pib": "ВЮ",
+    "mainTitle": "AI / ML-інженер. Спробуйте мої рішення.",
+    "descriptionOfMainTitle": "Системи даних, машинне навчання та RAG — запитайте AI-агента нижче або напишіть напряму.",
     
-    "partOfSkills01": "01 / ІНТЕЛЕКТУАЛЬНІ СИСТЕМИ",
-    "titleOfSkills": "Від архітектури даних до працюючих AI-рішень.",
+    "headerAIChat": "AI-чат",
+    "headerConnect": "Зв'язатися",
 
-    "skillML": "Машинне навчання",
-    "skillMLDescr": "Production-моделі, оцінювання та практичне застосування LLM.",
+    "mainConnectButton": "Обговорити проєкт",
+    "mainChatAvailability": "RAG-чат готовий до запитань",
 
-    "skillDataPlatform": "Платформи даних",
-    "skillDataPlatformDescr": "Сховища даних, векторний пошук та надійні data pipelines.",
+    "AIChatTitle": "AI-агент · RAG",
+    "AIChatDescription": "Запитуйте про досвід Володимира або будь-яку іншу тему.",
+    "AIChatAvailability": "Активний",
+    "AIChatFirstPrompt": "Привіт! Я AI-помічник Володимира. Що хочете дізнатися?",
+    "AIChatInputTitle": "Ваше запитання",
+    "AIChatInputPlaceholder": "Напишіть будь-яке запитання…",
+    "AIChatInputTips": "Enter — надіслати · Shift+Enter — новий рядок",
+    "AIChatInputPolicy": "Кожне запитання незалежне. Переписка зникає після оновлення. AI може помилятися.",
+    "AIChatClearBtn": "Очистити",
+    "AIChatSendBtn": "Надіслати",
 
-    "skillSysArch": "Системна архітектура",
-    "skillSysArchDescr": "Надійні інтерфейси, масштабовані API та чіткі інженерні рішення.",
-
-    "skillDataGover": "Управління даними",
-    "skillDataGoverDescr": "Якість, походження даних та надійне використання даних для прийняття критичних рішень.",
-
-    "partOfWebInProgress": "Ця частина в розробці 🚧",
-
-    "starterPrompt": "Привіт! Я можу зорієнтувати в навичках розробника, розказати про умови співпраці, тощо.",
-    "introText": "Ставте будь які запитання які вас цікавлять!",
-    "presetQuestions1": "На чому саме в галузі машинного навчання ви зосереджуєтесь?",
-    "presetQuestions2": "Які інструменти ви використовуєте?",
-    "presetQuestions3": "Які проєкти підходять найкраще?",
-    "headAIAssistant": "Профільний помічник ШІ",
-    "chatPlaceholder": "Запитайте щось у профілі...",
-    "sendBtn": "Надіслати"
+    "footerTitle": "Дані · ML · LLM · RAG",
+    "footerUpBtn": "Нагору"
 }

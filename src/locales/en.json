@@ -1,32 +1,26 @@
 {
-    "availible": "AVAILABLE FOR SELECT COLLABORATIONS",
     "name": "Volodymyr Yusyp",
-    "specialisation": "AI / ML & Data Engineer",
-    "descriptionOfSpecialisation": "I design data systems and machine-learning workflows that turn complex information into reliable decisions.",
-    
-    "partOfSkills01": "01 / SYSTEMS INTELLIGENCE",
-    "titleOfSkills": "From data architecture to deployed intelligence.",
+    "pib": "VY",
+    "mainTitle": "AI / ML Engineer. Explore my solutions.",
+    "descriptionOfMainTitle": "Data systems, machine learning, and RAG — ask the AI agent below or get in touch directly.",
 
-    "skillML": "Machine learning",
-    "skillMLDescr": "Production models, evaluation and applied LLM workflows.",
+    "headerAIChat": "AI Chat",
+    "headerConnect": "Contact",
 
-    "skillDataPlatform": "Data platforms",
-    "skillDataPlatformDescr": "Warehouses, vector search and accountable data pipelines.",
+    "mainConnectButton": "Discuss a Project",
+    "mainChatAvailability": "RAG chat is ready for your questions",
 
-    "skillSysArch": "System architecture",
-    "skillSysArchDescr": "Reliable interfaces, scalable APIs and clear engineering decisions.",
+    "AIChatTitle": "AI Agent · RAG",
+    "AIChatDescription": "Ask about Volodymyr's experience or any other topic.",
+    "AIChatAvailability": "Online",
+    "AIChatFirstPrompt": "Hi! I'm Volodymyr's AI assistant. What would you like to know?",
+    "AIChatInputTitle": "Your Question",
+    "AIChatInputPlaceholder": "Type any question…",
+    "AIChatInputTips": "Enter — send · Shift+Enter — new line",
+    "AIChatInputPolicy": "Each question is independent. The conversation is cleared when the page is refreshed. AI may make mistakes.",
+    "AIChatClearBtn": "Clear",
+    "AIChatSendBtn": "Send",
 
-    "skillDataGover": "Data governance",
-    "skillDataGoverDescr": "Quality, lineage and trustworthy delivery for critical decisions.",
-
-    "partOfWebInProgress": "Currently in development 🚧",
-
-    "starterPrompt": "Hi! I can provide guidance on developer skills, explain the terms of collaboration, and so on.",
-    "introText": "Feel free to ask any questions you might have!",
-    "presetQuestions1": "What is your ML focus?",
-    "presetQuestions2": "What tools do you use?",
-    "presetQuestions3": "What projects are the best fit?",
-    "headAIAssistant": "Profile AI Assistant",
-    "chatPlaceholder": "Ask a profile question...",
-    "sendBtn": "Send"
+    "footerTitle": "Data · ML · LLM · RAG",
+    "footerUpBtn": "Back to Top"
 }
