@@ -1,0 +1,17 @@
+.main {
+    display: flex;
+    padding: 20px 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+    align-self: stretch;
+}
+
+/* Планшети та мобільні */
+@media (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 32px;
+    }
+}

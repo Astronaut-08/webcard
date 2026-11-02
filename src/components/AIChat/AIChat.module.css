@@ -1,0 +1,27 @@
+.main {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    border-radius: 12px;
+    border: 1px solid var(--Portfolio-Color-Divider, #263140);
+    background: var(--Portfolio-Color-Surface, #101722);
+    animation:
+    kf_9_1199_opacity_0 5.05s linear,
+    kf_9_1199_translate_0 5.05s linear;
+}
+
+@keyframes kf_9_1199_opacity_0 {
+  0% { opacity: 0; }
+  10.891% { animation-timing-function: ease-out; opacity: 0; }
+  19.802% { opacity: 1; }
+  100% { opacity: 1; }
+}
+@keyframes kf_9_1199_translate_0 {
+  0% { translate: 0px 12px; }
+  10.891% { animation-timing-function: ease-out; translate: 0px 12px; }
+  19.802% { translate: 0px 0px; }
+  100% { translate: 0px 0px; }
+}

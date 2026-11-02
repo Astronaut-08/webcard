@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: 4px; /* Невеликий відступ між кнопками, якщо потрібно */
+  border-radius: 6px;
+  border: 1px solid var(--Portfolio-Color-Control-border, #65758E);
+  background: var(--Portfolio-Color-Surface, #101722);
+  width: fit-content;
+}
+
+.button {
+  all: unset; /* Скидаємо стандартні стилі кнопок браузера */
+  display: flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: var(--Portfolio-Color-Text-Secondary, #94A3B8); /* Колір для неактивної мови */
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  color: var(--Portfolio-Color-Text-Primary, #FFFFFF);
+}
+
+.active {
+  background: var(--Portfolio-Color-Primary, #3B82F6); /* Синій фоновий колір активної кнопки */
+  color: var(--Portfolio-Color-Text-Primary, #FFFFFF);
+}

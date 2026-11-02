@@ -1,0 +1,46 @@
+.btn {
+    display: inline-flex;
+    height: 48px; /* або підібрати під макет, наприклад auto з падінгами */
+    padding: 0 16px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--Portfolio-Color-Control-border, #65758E);
+    background: var(--Portfolio-Color-Surface, #101722);
+    color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    /* Portfolio/Typography/Button */
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    
+    transition: background-color 150ms ease, border-color 150ms ease, transform 100ms ease;
+}
+
+.btn:hover {
+    background: var(--Portfolio-Color-Surface-hover, #172232);
+    border-color: var(--Portfolio-Color-Accent-hover, #85ACFF);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--Portfolio-Color-Accent-hover, #85ACFF);
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: none; /* залежно від вашої SVG-іконки */
+    stroke: var(--Portfolio-Color-Accent, #4B85FF);
+    stroke-width: 2px;
+}

@@ -1,0 +1,168 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.title {
+    align-self: stretch;
+    color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
+    margin: 0;
+
+    /* Portfolio/Typography/Body/Small */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.field {
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid var(--Portfolio-Color-Control-border, #65758E);
+    background: var(--Portfolio-Color-Surface, #101722);
+    color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+
+    /* Portfolio/Typography/Body/Default */
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    transition: border-color 150ms ease;
+}
+
+.field:focus {
+    border-color: var(--Portfolio-Color-Accent-hover, #85ACFF);
+    outline: 2px solid var(--Portfolio-Color-Accent-hover, #85ACFF);
+    outline-offset: 2px;
+}
+
+.field::placeholder {
+    color: var(--Portfolio-Color-Text-muted, #8292A8);
+}
+
+.tips {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    color: var(--Portfolio-Color-Text-muted, #8292A8);
+    margin: 0;
+
+    /* Portfolio/Typography/Caption */
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.tips p {
+    margin: 0;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+
+/* Secondary кнопка "Очистити" */
+.clear {
+    display: inline-flex;
+    height: 52px;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid var(--Portfolio-Color-Control-border, #65758E);
+    background: var(--Portfolio-Color-Surface, #101722);
+    color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
+    cursor: pointer;
+    outline: none;
+
+    /* Portfolio/Typography/Button */
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.clear:hover {
+    background: var(--Portfolio-Color-Surface-hover, #172232);
+    border-color: var(--Portfolio-Color-Text-Secondary, #B1BDCE);
+}
+
+/* Primary кнопка "Надіслати" */
+.AIChatSendBtn {
+    display: inline-flex;
+    height: 52px;
+    padding: 0 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: none;
+    background: var(--Portfolio-Color-Accent, #4B85FF);
+    color: var(--Portfolio-Color-Background, #090D14);
+    cursor: pointer;
+    outline: none;
+
+    /* Portfolio/Typography/Button */
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    transition: background-color 150ms ease, transform 100ms ease;
+}
+
+.AIChatSendBtn:hover {
+    background: var(--Portfolio-Color-Accent-hover, #85ACFF);
+}
+
+.AIChatSendBtn:active {
+    background: var(--Portfolio-Color-Accent-pressed, #4078F0);
+    transform: translateY(1px);
+}
+
+.send-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .AIChatSendBtn:hover .send-icon {
+        transform: translate(2px, -2px);
+    }
+}

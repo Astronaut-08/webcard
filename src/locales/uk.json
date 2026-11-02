@@ -12,7 +12,8 @@
 
     "AIChatTitle": "AI-агент · RAG",
     "AIChatDescription": "Запитуйте про досвід Володимира або будь-яку іншу тему.",
-    "AIChatAvailability": "Активний",
+    "AIChatAvailability": "Готовий до відповіді",
+    "AIChatAvailability1": "Думаю...",
     "AIChatFirstPrompt": "Привіт! Я AI-помічник Володимира. Що хочете дізнатися?",
     "AIChatInputTitle": "Ваше запитання",
     "AIChatInputPlaceholder": "Напишіть будь-яке запитання…",

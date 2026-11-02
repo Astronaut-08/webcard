@@ -4,7 +4,7 @@
     "mainTitle": "AI / ML Engineer. Explore my solutions.",
     "descriptionOfMainTitle": "Data systems, machine learning, and RAG — ask the AI agent below or get in touch directly.",
 
-    "headerAIChat": "AI Chat",
+    "headerAIChat": "AI-Chat",
     "headerConnect": "Contact",
 
     "mainConnectButton": "Discuss a Project",
@@ -12,7 +12,8 @@
 
     "AIChatTitle": "AI Agent · RAG",
     "AIChatDescription": "Ask about Volodymyr's experience or any other topic.",
-    "AIChatAvailability": "Online",
+    "AIChatAvailability": "Ready to answer",
+    "AIChatAvailability1": "Thinking...",
     "AIChatFirstPrompt": "Hi! I'm Volodymyr's AI assistant. What would you like to know?",
     "AIChatInputTitle": "Your Question",
     "AIChatInputPlaceholder": "Type any question…",

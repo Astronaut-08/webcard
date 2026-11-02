@@ -1,15 +1,19 @@
 :root {
-    --background: #090D14;
-    --surface: #101722;
-    --surface-hover: #172232;
+    --Portfolio-Color-Background: #090D14;
+    --Portfolio-Color-Surface: #101722;
+    --Portfolio-Color-Surface-hover: #172232;
     --Portfolio-Color-Text-Primary: #F2F5FA;
     --Portfolio-Color-Text-Secondary: #B1BDCE;
-    --text-muted: #8292A8;
-    --accent: #4B85FF;
-    --accent-hover: #85ACFF;
-    --accent-pressed: #4078F0;
-    --control-border: #65758E;
-    --divider: #263140;
-    --danger: #FF9494;
-    --success: #90C6AA;
+    --Portfolio-Color-Text-muted: #8292A8;
+    --Portfolio-Color-Accent: #4B85FF;
+    --Portfolio-Color-Accent-hover: #85ACFF;
+    --Portfolio-Color-Accent-pressed: #4078F0;
+    --Portfolio-Color-Control-border: #65758E;
+    --Portfolio-Color-Divider: #263140;
+    --Portfolio-Color-Danger: #FF9494;
+    --Portfolio-Color-Success: #90C6AA;
+}
+
+html {
+    background-color: var(--Portfolio-Color-Background);
 }

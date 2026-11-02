@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.monogram {
+  display: flex;
+  width: 44px; /* Точний розмір під квадрат з Figma */
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1.5px solid var(--Portfolio-Color-Accent, #4B85FF); /* Синя акцентна рамка як на другому скріншоті */
+  background: var(--Portfolio-Color-Surface, #101722);
+  box-sizing: border-box;
+}
+
+.monogram-text,
+.monogram-text :global(.typer-writer),
+.monogram-text span {
+  color: var(--Portfolio-Color-Accent, #4B85FF) !important;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+}
+
+.text,
+.text :global(.typer-writer),
+.text span {
+  color: var(--Portfolio-Color-Text-Primary, #F2F5FA) !important;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+}

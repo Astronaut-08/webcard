@@ -1,0 +1,61 @@
+.main {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: nowrap;
+}
+
+.navpoint {
+    /* Прибираємо фіксовану ширину, щоб текст не стискався і не обрізався */
+    width: auto;
+    white-space: nowrap;
+    color: var(--Portfolio-Color-Text-secondary, #B1BDCE);
+    margin: 0;
+
+    /* Portfolio/Typography/Body/Small */
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.contact {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
+    animation: kf_24_4_opacity_0 5.05s linear;
+}
+
+@keyframes kf_24_4_opacity_0 {
+  0% { opacity: 0; }
+  3.96% { animation-timing-function: ease-out; opacity: 0; }
+  10.891% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+
+/* Десктопна версія: видно на ПК, сховано на планшетах та мобільних */
+.desktop-only {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Мобільна/планшетна версія: сховано на ПК, з'являється на екранах менше 1024px */
+.mobile-only {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+    }
+}

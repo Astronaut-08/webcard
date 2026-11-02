@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  width: 340px;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 16px;
+  border: 1px solid var(--Portfolio-Color-Divider, #263140);
+  overflow: hidden; /* Обрізає все, що виходить за межі радіуса картки */
+  background: var(--Portfolio-Color-Surface, #101722);
+  
+  animation:
+    kf_21_4_opacity_0 5.05s linear,
+    kf_21_4_translate_0 5.05s linear;
+}
+
+.image {
+  width: 100%;
+  height: 152.275px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  animation: kf_21_5_scale_0 5.05s linear;
+}
+
+.description {
+  display: flex;
+  padding: 16px 20px 18px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  background: var(--Portfolio-Color-Surface, #101722);
+}
+
+.name {
+  color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
+
+  /* Portfolio/Typography/Body/Strong */
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+}
+
+.field {
+  width: 100%;
+  color: var(--Portfolio-Color-Text-muted, #8292A8);
+
+  /* Portfolio/Typography/Mono/Caption */
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+}
+
+@keyframes kf_21_4_opacity_0 {
+  0% { animation-timing-function: ease-out; opacity: 0; }
+  10.891% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes kf_21_4_translate_0 {
+  0% { animation-timing-function: ease-out; translate: 0px 8px; }
+  10.891% { translate: 0px 0px; }
+  100% { translate: 0px 0px; }
+}
+
+@keyframes kf_21_5_scale_0 {
+  0% { animation-timing-function: ease-out; scale: 1.025 1.025; }
+  16.832% { scale: 1 1; }
+  100% { scale: 1 1; }
+}
