@@ -6,7 +6,9 @@ export default function MainInfo() {
     return (
         <div className={styles.main}>
             <ValuableProposition />
-            <PhotoCard />
+            <div className={styles.wrapper}>
+                <PhotoCard />
+            </div>
         </div>
     )
 }

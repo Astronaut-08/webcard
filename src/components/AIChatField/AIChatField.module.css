@@ -18,61 +18,63 @@
     align-self: stretch;
 }
 
-.ai-icon {
+.message {
     display: flex;
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background: var(--Portfolio-Color-Surface, #101722);
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1 0 0;
+    border-radius: 8px;
     border: 1px solid var(--Portfolio-Color-Divider, #263140);
-    
-    /* Збірний контур замість суцільної заливки */
+    background: var(--Portfolio-Color-Surface, #101722);
+    box-sizing: border-box;
+}
+
+/* Рядок із заголовком відправника */
+.sender-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Компактна іконка у рядку */
+.ai-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
     fill: none !important;
     stroke: var(--Portfolio-Color-Accent, #4B85FF) !important;
     stroke-width: 2px;
 }
 
-.space {
-    width: 28px;
-    height: 1px;
-}
-
-.message {
-    display: flex;
-    padding: 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    flex: 1 0 0;
-    border-radius: 8px;
-    border: 1px solid var(--Portfolio-Color-Divider, #263140);
-    background: var(--Portfolio-Color-Surface, #101722);
-}
-
 .sender {
     color: var(--Portfolio-Color-Text-muted, #8292A8);
-    margin: 0;
-
-    /* Portfolio/Typography/Mono/Caption */
     font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: 500;
     line-height: 18px;
 }
 
 .message-text {
     align-self: stretch;
-    color: var(--Portfolio-Color-Text-secondary, #B1BDCE);
-    margin: 0;
-
-    /* Portfolio/Typography/Body/Default */
+    color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
     font-family: Inter, sans-serif;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    margin: 0;
+}
+
+/* Адаптивне зменшення шрифту для мобільних пристроїв */
+@media (max-width: 768px) {
+    .message {
+        padding: 12px 14px;
+        gap: 8px;
+    }
+
+    .message-text {
+        font-size: 15px;
+        line-height: 22px;
+    }
 }

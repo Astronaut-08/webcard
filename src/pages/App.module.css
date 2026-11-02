@@ -1,28 +1,17 @@
 @import '../index.css';
 
-.mainsection {
-  display: flex;
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  flex-direction: column;
-  align-items: stretch;
-  background: var(--Portfolio-Color-Background, #090D14);
-  box-sizing: border-box;
-  padding: 0 40px; /* Комфортні відступи з боків для великих екранів */
-}
+.desktop { display: block; }
+.tablet { display: none; }
+.mobile { display: none; }
 
-/* Адаптивність для планшетів та мобільних пристроїв */
-@media (max-width: 1024px) {
-  .mainsection {
-    padding: 0 24px;
-    gap: 32px;
-  }
+@media (max-width: 1024px) and (min-width: 769px) {
+  .desktop { display: none; }
+  .tablet { display: block; }
+  .mobile { display: none; }
 }
 
 @media (max-width: 768px) {
-  .mainsection {
-    padding: 0 16px;
-    gap: 24px;
-  }
+  .desktop { display: none; }
+  .tablet { display: none; }
+  .mobile { display: block; }
 }

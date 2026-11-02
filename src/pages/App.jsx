@@ -1,23 +1,24 @@
-import style from './App.module.css'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
-import Meet from '../components/Meet/Meet'
-import MainInfo from '../components/MainInfo/MainInfo'
-import AIChat from '../components/AIChat/AIChat'
-import Footer from '../components/Footer/Footer'
-import MobileActions from '../components/MobileActions/MobileActions'
+import DesktopApp from './platforms/DesktopApp'
+import TabletApp from './platforms/TabletApp'
+import MobileApp from './platforms/MobileApp'
+import styles from './App.module.css'
 
 export default function App() {
-
-  return (
-      <section className={style.mainsection}>
-        <Meet />
-        <MainInfo />
-        <MobileActions />
-        <AIChat />
-        <Footer />
-        <SpeedInsights />
-        <Analytics />
-      </section>
-  )
+    return (
+        <>
+            <div className={styles.desktop}>
+                <DesktopApp />
+            </div>
+            <div className={styles.tablet}>
+                <TabletApp />
+            </div>
+            <div className={styles.mobile}>
+                <MobileApp />
+            </div>
+            <SpeedInsights />
+            <Analytics />
+        </>
+    )
 }

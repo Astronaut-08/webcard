@@ -1,12 +1,13 @@
 .main {
   display: flex;
-  width: 340px;
+  width: 100%; /* Розтягується на всю доступну ширину колонки чи екрана */
   flex-direction: column;
   align-items: flex-start;
   border-radius: 16px;
   border: 1px solid var(--Portfolio-Color-Divider, #263140);
-  overflow: hidden; /* Обрізає все, що виходить за межі радіуса картки */
+  overflow: hidden;
   background: var(--Portfolio-Color-Surface, #101722);
+  box-sizing: border-box;
   
   animation:
     kf_21_4_opacity_0 5.05s linear,
@@ -15,7 +16,7 @@
 
 .image {
   width: 100%;
-  height: 152.275px;
+  min-height: 180px; /* За потреби можна збільшити висоту для планшета */
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -30,12 +31,11 @@
   gap: 4px;
   align-self: stretch;
   background: var(--Portfolio-Color-Surface, #101722);
+  box-sizing: border-box;
 }
 
 .name {
   color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
-
-  /* Portfolio/Typography/Body/Strong */
   font-family: Inter, sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -47,8 +47,6 @@
 .field {
   width: 100%;
   color: var(--Portfolio-Color-Text-muted, #8292A8);
-
-  /* Portfolio/Typography/Mono/Caption */
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   font-style: normal;
@@ -73,4 +71,29 @@
   0% { animation-timing-function: ease-out; scale: 1.025 1.025; }
   16.832% { scale: 1 1; }
   100% { scale: 1 1; }
+}
+
+@media (max-width: 768px) {
+    .name {
+    color: var(--Portfolio-Color-Text-primary, #F2F5FA);
+
+    /* Portfolio/Typography/Heading/Card */
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+  }
+
+  .field {
+    width: 167px;
+    color: var(--Portfolio-Color-Text-muted, #8292A8);
+
+    /* Portfolio/Typography/Mono/Caption */
+    font-family: "IBM Plex Mono";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+  }
 }

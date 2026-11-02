@@ -39,3 +39,31 @@
   line-height: 24px;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .monogram-text,
+  .monogram-text :global(.typer-writer),
+  .monogram-text span {
+    color: var(--Portfolio-Color-Accent, #4B85FF);
+
+    /* Portfolio/Typography/Mono/Brand */
+    font-family: "IBM Plex Mono";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+  }
+
+  .text,
+  .text :global(.typer-writer),
+  .text span {
+    color: var(--Portfolio-Color-Text-primary, #F2F5FA);
+
+    /* Portfolio/Typography/Body/Strong */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+  }
+}

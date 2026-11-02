@@ -156,3 +156,43 @@
   22.772% { translate: 0px 0px; }
   100% { translate: 0px 0px; }
 }
+
+@media (max-width: 768px) {
+    .title {
+        color: var(--Portfolio-Color-Text-primary, #F2F5FA);
+
+        /* Portfolio/Typography/Display/Mobile */
+        font-family: Inter;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px; /* 112.5% */
+        letter-spacing: -1px;
+    }
+
+    .description {
+        color: var(--Portfolio-Color-Text-secondary, #B1BDCE);
+
+        /* Portfolio/Typography/Body/Small */
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+    }
+
+    .btn {
+        max-width: 100%;
+    }
+
+    .available-text {
+        color: var(--Portfolio-Color-Text-secondary, #B1BDCE);
+
+        /* Portfolio/Typography/Caption */
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 150% */
+    }
+}

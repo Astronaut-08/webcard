@@ -8,18 +8,18 @@ export default function AIChatField({ messages }) {
 
                 return (
                     <div className={styles['message-block']} key={index}>
-                        <div>
-                            {isAI ? (
-                                <svg className={styles['ai-icon']} viewBox="0 0 24 24">
-                                    <use href='/icons.svg#ai-icon' />
-                                </svg>
-                            ) : (
-                                <div className={styles.space}></div>
-                            )}
-                        </div>
-                        
                         <div className={styles.message}>
-                            <div className={styles.sender}>{msg.sender}</div>
+                            {/* Верхній рядок: іконка + назва відправника */}
+                            <div className={styles['sender-header']}>
+                                {isAI && (
+                                    <svg className={styles['ai-icon']} viewBox="0 0 24 24">
+                                        <use href='/icons.svg#ai-icon' />
+                                    </svg>
+                                )}
+                                <span className={styles.sender}>{msg.sender}</span>
+                            </div>
+
+                            {/* Текст повідомлення */}
                             <div className={styles['message-text']}>{msg.text}</div>
                         </div>
                     </div>

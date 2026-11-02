@@ -12,18 +12,23 @@
     gap: 16px;
 }
 
+/* Виправлення візуального рендерингу іконки зі скріншота */
 .ai-icon {
     display: flex;
     width: 44px;
     height: 44px;
     flex-shrink: 0;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     background: var(--Portfolio-Color-Surface, #101722);
     border: 1px solid var(--Portfolio-Color-Divider, #263140);
-    fill: var(--Portfolio-Color-Accent, #4B85FF);
+    box-sizing: border-box;
+
+    /* Рендеринг чистого синього контуру як на іконці зі скріншота */
+    fill: none !important;
+    stroke: var(--Portfolio-Color-Accent, #4B85FF) !important;
+    stroke-width: 2px;
 }
 
 .description {
@@ -36,8 +41,6 @@
 .title {
     color: var(--Portfolio-Color-Text-Primary, #F2F5FA);
     margin: 0;
-
-    /* Portfolio/Typography/Body/Strong */
     font-family: Inter, sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -49,8 +52,6 @@
     max-width: 340px;
     color: var(--Portfolio-Color-Text-muted, #8292A8);
     margin: 0;
-
-    /* Portfolio/Typography/Caption */
     font-family: Inter, sans-serif;
     font-size: 12px;
     font-style: normal;
@@ -68,11 +69,57 @@
 .status-text {
     color: var(--Portfolio-Color-Text-Secondary, #B1BDCE);
     margin: 0;
-
-    /* Portfolio/Typography/Mono/Caption */
     font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
+}
+
+/* Адаптиви під мобільну версію */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .status {
+        align-self: flex-start;
+        /* Можна додати невеликий відступ ліворуч узгоджено з іконкою або залишити рівно під текстом */
+        margin-left: 60px; /* Ширина іконки (44px) + gap (16px) для ідеального вирівнювання з назвою */
+    }
+
+    .title {
+        color: var(--Portfolio-Color-Text-primary, #F2F5FA);
+
+        /* Portfolio/Typography/Body/Strong */
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px; /* 150% */
+    }
+
+    .argument {
+        color: var(--Portfolio-Color-Text-secondary, #B1BDCE);
+
+        /* Portfolio/Typography/Body/Small */
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+    }
+
+    .status-text {
+        color: var(--Portfolio-Color-Text-secondary, #B1BDCE);
+
+        /* Portfolio/Typography/Mono/Caption */
+        font-family: "IBM Plex Mono";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px; /* 150% */
+    }
 }

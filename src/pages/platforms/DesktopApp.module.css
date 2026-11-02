@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--Portfolio-Color-Background, #090D14);
+  box-sizing: border-box;
+  padding: 0 40px; /* Комфортні відступи з боків для великих екранів */
+}
+
+.desktop { display: block; }
+.tablet { display: none; }
+.mobile { display: none; }
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .desktop { display: none; }
+  .tablet { display: block; }
+  .mobile { display: none; }
+}
+
+@media (max-width: 768px) {
+  .desktop { display: none; }
+  .tablet { display: none; }
+  .mobile { display: block; }
+}

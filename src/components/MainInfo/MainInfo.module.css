@@ -7,6 +7,10 @@
     align-self: stretch;
 }
 
+.wrapper {
+    max-width: 580px;
+}
+
 /* Планшети та мобільні */
 @media (max-width: 1024px) {
     .main {
