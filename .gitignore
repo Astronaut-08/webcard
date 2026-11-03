@@ -26,3 +26,4 @@ dist-ssr
 .env*
 .venv*
 info.py
+__pycache__
