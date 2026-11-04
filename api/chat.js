@@ -66,7 +66,7 @@ export default async function handler(req, res) {
 
         // Вмикаємо Stream 
         const stream = await openai.chat.completions.create({
-            model: 'openai/gpt-4o-mini', // Економна і швидка модель
+            model: 'openai/gpt-oss-120b', // Економна і швидка модель
             messages: [
                 { role: 'system', content: SYSTEM_PROMPT },
                 { role: 'user', content: `Контекст із документів: \n${retrievedContext}\n\nЗапитання: <<<${prompt}>>>` }

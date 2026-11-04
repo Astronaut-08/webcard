@@ -9,6 +9,11 @@
     border: 1px solid var(--Portfolio-Color-Divider, #263140);
     background: var(--Portfolio-Color-Background, #090D14);
     box-sizing: border-box;
+    height: 400px;
+    overflow-y: auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-right: 0.5rem;
 }
 
 .message-block {
@@ -77,4 +82,23 @@
         font-size: 15px;
         line-height: 22px;
     }
+}
+
+/* Scroll bar */ 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0b0f17; /* Колір треку (фону) */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2563eb; /* Яскраво-синій повзунок (Tailwind blue-600) */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6; /* Трохи світліший при наведенні */
 }
