@@ -9,7 +9,7 @@
     border: 1px solid var(--Portfolio-Color-Divider, #263140);
     background: var(--Portfolio-Color-Background, #090D14);
     box-sizing: border-box;
-    height: 400px;
+    height: 280px;
     overflow-y: auto;
     gap: 1rem;
     margin-bottom: 1rem;

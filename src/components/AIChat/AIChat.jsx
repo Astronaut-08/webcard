@@ -16,7 +16,7 @@ export default function AIChat() {
 
     const handleText = async (text) => {
         setStatus(t('AIChatAvailability1'))
-        setMessages((prev) => [...prev, { sender: 'User', text: text }, { sender: 'AI', text: '' }])
+        setMessages((prev) => [...prev, { sender: 'Ви', text: text }, { sender: 'AI', text: '' }])
 
         abortRef.current?.abort()
         const controller = new AbortController()
