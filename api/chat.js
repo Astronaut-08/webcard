@@ -71,7 +71,6 @@ export default async function handler(req, res) {
                 { role: 'system', content: SYSTEM_PROMPT },
                 { role: 'user', content: `Контекст із документів: \n${retrievedContext}\n\nЗапитання: <<<${prompt}>>>` }
             ],
-            max_tokens: 400,
             stream: true
         })
 
