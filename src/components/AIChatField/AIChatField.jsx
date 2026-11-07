@@ -2,6 +2,7 @@ import styles from './AIChatField.module.css'
 import { useRef, useEffect, use } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 export default function AIChatField({ messages }) {
     const containerRef = useRef(null)
@@ -53,6 +54,7 @@ export default function AIChatField({ messages }) {
                             <div className={styles['message-text']}>
                                 <ReactMarkdown
                                 remarkPlugins={[remarkGfm]}
+                                rehypeRaw={[rehypeRaw]}
                                 components={{
                                     a: (props) => (
                                         <a {...props} target='_blank' rel='noopener noreferrer' ></a>
